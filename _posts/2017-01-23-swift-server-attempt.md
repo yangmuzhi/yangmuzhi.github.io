@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "开始尝试 Swift server 开发"
+title: "政委 Training 秘笈 之 强化学习篇： 简介"
 categories:
-- Swift
+- 政委Training秘笈 
+- 强化学习
 tags:
-- Swift
+- 政委 
+- 强化学习
 
 ---
