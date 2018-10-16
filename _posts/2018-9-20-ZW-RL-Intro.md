@@ -9,6 +9,7 @@ tags:
 - 强化学习
 
 ---
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 开篇说明
 --
