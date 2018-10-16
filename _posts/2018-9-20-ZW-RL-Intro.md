@@ -67,7 +67,7 @@ $$
 V (s) ← V (s) + \alpha(V (s') − V (s))
 $$
 
-$V$是value function，$s$是action之前state，$s'$是action之后的state ，根据二者的差距来纠正$s$的value function，$\alpha$是更新率，可以认为是学习率。
+$V$ 是value function，$s$  是action之前state，$s'$  是action之后的state ，根据二者的差距来纠正$s$的value function，$\alpha$ 是更新率，可以认为是学习率。
 
 
 本篇小节
