@@ -1,52 +1,58 @@
----
-title: muzhi's blog
-layout: page
----
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Muzhi Yang's Homepage</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body id="top">
 
-<ul class="listing">
-{% for post in paginator.posts %}
-  {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
-  {% if year != y %}
-    {% assign year = y %}
-    <li class="listing-seperator">{{ y }}</li>
-  {% endif %}
-  <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-  </li>
-{% endfor %}
-</ul>
+		<!-- Header -->
+			<header id="header">
+        <ul>
+				<li><img src="images/avatar.png" width="200px" height="190px"/></li>
+      </ul>
+        <h1><strong>Muzhi</strong></h1>
+				<h1>Data Mining & Machine Learning Enthusiasts<h1>
+        <!-- content-->
+        <h1>A Postgraduate In School of Management In Xi'an Jiaotong University
+				<h1>
+				<br>
+				<h1><strong>Email</strong></h1>
+				muzhi_yang@stu.xjtu.edu.cn
+			</header>
 
-<div id="post-pagination" class="paginator">
+		<!-- Main -->
+			<div id="main">
 
-  {% if paginator.previous_page %}
-    {% if paginator.previous_page == 1 %}
-    <a href="/"><前页</a>
-    {% else %}
-    <a href="/page{{paginator.previous_page}}"><前页</a>
-    {% endif %}
-  {% else %}
-    <span class="previous disabled"><前页</span>
-  {% endif %}
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>My Blogs</h2>
+							<ul>
+								<li><a href="blogs/2017-12-9-R语言经验分享.html">R语言经验分享</a>  9/12/2017</li>
+								<li><a href="blogs/2017-12-12-cqu.ai沙龙分享——线性回归理论推导.html">cqu.ai沙龙分享——线性回归理论推导</a>
+                12/12/2017</li>
+								<li><a href="blogs/2018-3-29-51job机器学习职位挖掘.html">51job xjb 分析</a> 3/29/2018</li>
+								<li><a href="blogs/2018-4-6-课程设计.html">课设展示（暂定）</a>4/6/2018</li>
+								<li><a href="blogs/2018-10-17-corrplotVisdemo.html">A Quick Demo of CorrplotVis for Corrplot</a>10/17/2018</li>
+							</ul>
+						</header>
+					</section>
 
-      {% if paginator.page == 1 %}
-      <span class="current-page">1</span>
-      {% else %}
-      <a href="/">1</a>
-      {% endif %}
+<a href="https://info.flagcounter.com/yI5u"><img src="https://s11.flagcounter.com/count2/yI5u/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 
-    {% for count in (2..paginator.total_pages) %}
-      {% if count == paginator.page %}
-      <span class="current-page">{{count}}</span>
-      {% else %}
-      <a href="/page{{count}}">{{count}}</a>
-      {% endif %}
-    {% endfor %}
 
-  {% if paginator.next_page %}
-    <a class="next" href="/page{{paginator.next_page}}">后页></a>
-  {% else %}
-    <span class="next disabled" >后页></span>
-  {% endif %}
-  (共{{ paginator.total_posts }}篇)
-</div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    			<script src="assets/js/jquery.poptrox.min.js"></script>
+    			<script src="assets/js/skel.min.js"></script>
+    			<script src="assets/js/util.js"></script>
+    			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    			<script src="assets/js/main.js"></script>
+
+    	</body>
+    </html>
