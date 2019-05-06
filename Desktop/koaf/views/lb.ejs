@@ -1,0 +1,116 @@
+
+<%- include("main-header",{type:''}) %>
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+
+<div id="content-wrapper">
+
+  <div class="container-fluid">
+
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+
+      <li class="breadcrumb-item active">Leader Board</li>
+    </ol>
+
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fas fa-table name">kof</i>
+
+        <!-- <button class="btn-primary refresh_lb">
+          Refresh
+        </button> -->
+      </div>
+
+      <div class="card-body">
+        <div class="table-responsive">
+
+                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <th>Team Name</th>
+                            <th>Position</th>
+                            <th>Score</th>
+                            <th>Latest Submit Date</th>
+                            <th>Position Changes</th>
+                          </tr>
+                        </thead>
+                        <tbody class="new_data_table">
+                          <% console.log(posts)  %>
+                          <% if(posts.length > 0){  %>
+                          <% posts.forEach(function(res){ %>
+                          <tr>
+                            <td><%= res.pos %></td>
+                            <td><%= res.name %></td>
+                            <td><%= res.score %></td>
+                            <td><%= res.latest_sub_date %></td>
+                            <td><%= res.pos_change %></td>
+                          </tr>
+                          <% }) %>
+                          <% } %>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>Team Name</th>
+                            <th>Position</th>
+                            <th>Score</th>
+                            <th>Latest Submit Date</th>
+                            <th>Position Changes</th>
+                          </tr>
+                        </tfoot>
+
+
+                      </table>
+
+      </div>
+        </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+<script>
+
+
+
+  $('.refresh_lb').click(function(){
+
+
+    $.ajax({
+      url: "/lb",
+      data: {
+        "content": $('.name').html()
+      },
+      type: "POST",
+      cache: false,
+      dataType: 'json',
+      success: function (msg) {
+        // console.log(msg)
+        if (msg != 'error'){
+          $('.new_data_table').html(' ')
+          $.each(msg,function(i,val){
+            console.log(val.name)
+            $('.new_data_table').append(
+// table
+            '<tr>' +
+              '<th>' + val.name + '</th>' +
+              '<th>' + val.pos + '</th>' +
+              '<th>' + val.score + '</th>' +
+              '<th>' + val.lates_sub_date + '</th>' +
+              '<th>' + val.pos_changes + '</th>' +
+            '</tr>'
+            )
+          })
+
+        }
+      },
+      error: function () {
+        alert('server lost');
+      }
+    })
+})
+
+</script>
+  </div>
+
+
+
+<% include main-footer %>
